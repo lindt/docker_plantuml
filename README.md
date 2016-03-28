@@ -1,3 +1,6 @@
+[![](https://badge.imagelayers.io/funkwerk/compose_plantuml.svg)](https://imagelayers.io/?images=funkwerk/compose_plantuml:latest 'think/plantuml')
+[![Docker pulls](https://img.shields.io/docker/pulls/think/plantuml.svg)](https://hub.docker.com/r/think/plantuml/)
+
 # docker_plantuml
 
 Docker Container for [PlantUML](http://plantuml.com)
