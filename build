@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+
+function delete_ignored_tags {
+  for tag in $( sh gather_tags | grep -f .tagignore ); do
+    if git show-ref --tags | grep "tags/${tag}$"
+    then
+      echo "Delete Tag ${tag}"
+      git tag -d ${tag} && git push origin :refs/tags/${tag}
+    fi
+  done
+}
+
+function build_missing_tags {
+  for tag in $( sh gather_tags | grep -v -f .tagignore ); do
+    echo -n "Tag: ${tag} ... "
+    if git show-ref --tags | grep "tags/${tag}$" &> /dev/null
+    then
+      echo 'is existing'
+    else
+      echo 'needs building'
+      sed -i "s/PLANTUML_VERSION=.*/PLANTUML_VERSION=${tag}/" Dockerfile
+      git add Dockerfile && git commit -m "using version ${tag}" && git push
+      git tag "${tag}" && git push --tags
+    fi
+  done
+}
+
+delete_ignored_tags
+build_missing_tags

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -fqs https://sourceforge.net/projects/plantuml/files/ | grep "files/plantuml\.[0-9]*\.jar" | sed 's/.*files\/plantuml\.//' | cut -d '.' -f 1 | sort -n
