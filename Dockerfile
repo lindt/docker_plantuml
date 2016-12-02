@@ -7,7 +7,7 @@ ENV PLANTUML_VERSION=8051
 RUN \
   apk add --no-cache graphviz wget ca-certificates && \
   wget "https://downloads.sourceforge.net/project/plantuml/plantuml.${PLANTUML_VERSION}.jar" -O plantuml.jar && \
-  apk del wget
+  apk del wget ca-certificates
 
 ENV LANG en_US.UTF-8
 
