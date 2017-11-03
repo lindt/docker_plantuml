@@ -2,7 +2,7 @@ FROM frolvlad/alpine-oraclejdk8
 
 MAINTAINER think@hotmail.de
 
-ENV PLANTUML_VERSION=2017.08
+ENV PLANTUML_VERSION=2017.09
 
 RUN \
   apk add --no-cache graphviz wget ca-certificates && \
