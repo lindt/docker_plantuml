@@ -1,8 +1,10 @@
-FROM frolvlad/alpine-oraclejdk8
+FROM openjdk:8-jre-alpine
 
 MAINTAINER think@hotmail.de
 
-ENV PLANTUML_VERSION=1.2018.5
+ENV PLANTUML_VERSION=1.2019.1
+
+RUN apk add --no-cache ttf-dejavu
 
 RUN \
   apk add --no-cache graphviz wget ca-certificates && \
