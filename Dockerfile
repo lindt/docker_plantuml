@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 MAINTAINER think@hotmail.de
 
-ENV PLANTUML_VERSION=1.2019.1
+ENV PLANTUML_VERSION=1.2019.5
 
 RUN apk add --no-cache ttf-dejavu
 
