@@ -7,5 +7,6 @@ RUN \
   apk del wget ca-certificates
 
 ENV LANG en_US.UTF-8
+RUN ["java", "-Djava.awt.headless=true", "-jar", "plantuml.jar", "-version"]
 ENTRYPOINT ["java", "-Djava.awt.headless=true", "-jar", "plantuml.jar", "-p"]
 CMD ["-tsvg"]
