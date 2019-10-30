@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8
+FROM openjdk:14-jdk-alpine3.10
 MAINTAINER think@hotmail.de
 ENV PLANTUML_VERSION=1.2018.5
 RUN \
