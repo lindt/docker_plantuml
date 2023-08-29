@@ -1,5 +1,5 @@
 FROM openjdk:19-jdk-alpine3.16
-MAINTAINER think@hotmail.de
+LABEL org.opencontainers.image.authors="think@hotmail.de"
 ENV PLANTUML_VERSION=1.2023.1
 ENV LANG en_US.UTF-8
 RUN \
